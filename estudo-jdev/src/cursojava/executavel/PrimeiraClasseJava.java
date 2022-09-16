@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 
+
 public class PrimeiraClasseJava {
 
 	public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class PrimeiraClasseJava {
 			aluno1.setNome(nome);
 			// aluno1.setIdade(Integer.valueOf(idade));
 
-			for (int pos = 1; pos <= 3; pos++) {
+			for (int pos = 1; pos <= 1; pos++) {
 
 				String nomeDisciplina = JOptionPane.showInputDialog("Qual é o nome da disciplina " + pos + " ?: ");
 				String notaDisciplina = JOptionPane.showInputDialog("Qual a nota da disciplina " + pos + "?: ");
@@ -61,10 +62,33 @@ public class PrimeiraClasseJava {
 			
 			Aluno aluno = alunos.get(pos);
 			
+			if(aluno.getNome().equalsIgnoreCase("wess")) {
+				
+				Aluno trocar = new Aluno();
+				trocar.setNome("Will");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("WWW");
+				disciplina.setNota(99.5);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+				
+			}
+			
 			System.out.println("Aluno: " + aluno.getNome());
+			//System.out.println("Disciplina: " + aluno.getDisciplinas());
 			System.out.println("Nota: " + aluno.getMediaNota());
 			System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 			System.out.println("===============================================================================");
+			
+			for (int posd = 0; posd < aluno.getDisciplinas().size(); posd ++) {
+				
+				Disciplina disc = aluno.getDisciplinas().get(posd);				
+				System.out.println("Matéria: " + disc.getDisciplina() + " Nota: " + disc.getNota());
+			}
 			
 		}
 		
