@@ -52,7 +52,7 @@ public class PrimeiraClasseJava {
 				trocar.setNome("Mari");
 				
 				Disciplina disciplina = new Disciplina();
-				disciplina.setDisciplina("DDD");
+				disciplina.setDisciplina("DD");
 				disciplina.setNota(95.5);
 				
 				trocar.getDisciplinas().add(disciplina);
