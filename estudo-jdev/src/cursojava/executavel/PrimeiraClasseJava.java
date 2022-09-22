@@ -17,6 +17,11 @@ public class PrimeiraClasseJava {
 		List<Aluno> alunos = new ArrayList<Aluno>();
 
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+		
+		String user = JOptionPane.showInputDialog("Uduário:");
+		String senha = JOptionPane.showInputDialog("Semha:");
+		
+		if(user.equalsIgnoreCase("wallarock") && senha.equalsIgnoreCase("4995")) {
 
 		for (int qtd = 1; qtd <= 6; qtd++) {
 
@@ -82,6 +87,8 @@ public class PrimeiraClasseJava {
 
 			System.out.println("Nome: " + aluno.getNome() + " Resultado: " + aluno.getAlunoAprovado2() + " Nota: "
 					+ aluno.getMediaNota());
+		}
+		
 		}
 
 	}
