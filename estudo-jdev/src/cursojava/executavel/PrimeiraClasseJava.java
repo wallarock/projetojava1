@@ -26,12 +26,10 @@ public class PrimeiraClasseJava {
 		for (int qtd = 1; qtd <= 6; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do aluno: ");
-			// String idade = JOptionPane.showInputDialog("idade: ");
 
 			Aluno aluno1 = new Aluno();
 
 			aluno1.setNome(nome);
-			// aluno1.setIdade(Integer.valueOf(idade));
 
 			for (int pos = 1; pos <= 1; pos++) {
 
