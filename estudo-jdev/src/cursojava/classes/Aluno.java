@@ -113,8 +113,16 @@ public class Aluno extends Pessoa {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
+	
+	
 
 		
+	@Override
+	public String toString() {
+		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
+	}
+
 	public double getMediaNota() {
 		
 		double somaNotas = 0.0;
