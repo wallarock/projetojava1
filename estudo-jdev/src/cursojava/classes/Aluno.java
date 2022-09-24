@@ -120,8 +120,12 @@ public class Aluno extends Pessoa {
 	@Override
 	public String toString() {
 		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
+				+ serieMatriculado + ", disciplinas=" + disciplinas + ", nome=" + nome + ", idade=" + idade
+				+ ", dataNascimento=" + dataNascimento + ", registroGeral=" + registroGeral + ", numeroCPF=" + numeroCPF
+				+ ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 	}
+	
+	
 
 	public double getMediaNota() {
 		
@@ -164,5 +168,15 @@ public class Aluno extends Pessoa {
 		}
 	}
 		
+	@Override
+	public boolean pessoaMaiorIdade() {
+		
+		return idade >= 16;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Falow ô véião!!!" : "Hahaha bebezão!!!";
+	}
+	
 }
 
