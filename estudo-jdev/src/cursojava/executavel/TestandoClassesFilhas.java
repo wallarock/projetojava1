@@ -12,7 +12,7 @@ public class TestandoClassesFilhas {
 
 		aluno.setNome("Wallace");
 		aluno.setIdade(38);
-		aluno.setNomeEscola("NOC");
+		aluno.setNomeEscola("NOC FAT");
 		aluno.setIdade(17);
 		
 		Diretor diretor = new Diretor();
