@@ -1,5 +1,7 @@
 package cursojava.interfaces;
 
-public class PermitirAcesso {
+public interface PermitirAcesso {
 
+	public boolean autenticar();
+	
 }

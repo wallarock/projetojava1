@@ -1,6 +1,8 @@
 package cursojava.classes;
 
-public class Secretario extends Pessoa{
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso{
 	
 	private String registro;
 	private String nivelCargo;
@@ -63,6 +65,11 @@ public class Secretario extends Pessoa{
 		} else if (!registro.equals(other.registro))
 			return false;
 		return true;
+	}
+	@Override
+	public boolean autenticar() {
+					
+		return false;
 	}
 
 	
