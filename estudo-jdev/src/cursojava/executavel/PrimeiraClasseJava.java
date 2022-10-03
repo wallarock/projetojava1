@@ -10,6 +10,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 public class PrimeiraClasseJava {
 
@@ -22,12 +23,8 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Login:");
 		String senha = JOptionPane.showInputDialog("Senha:");
 		
-		Secretario secretario = new Secretario();
 		
-		secretario.setLogin(login);
-		secretario.setSenha(senha);
-		
-		if(secretario.autenticar()) {
+		if(new Secretario().autenticar(login, senha)) {
 
 		for (int qtd = 1; qtd <= 6; qtd++) {
 
