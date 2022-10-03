@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
+import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
 
 public class PrimeiraClasseJava {
@@ -18,10 +19,15 @@ public class PrimeiraClasseJava {
 
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 		
-		String user = JOptionPane.showInputDialog("Uduário:");
-		String senha = JOptionPane.showInputDialog("Semha:");
+		String login = JOptionPane.showInputDialog("Login:");
+		String senha = JOptionPane.showInputDialog("Senha:");
 		
-		if(user.equalsIgnoreCase("wallarock") && senha.equalsIgnoreCase("4995")) {
+		Secretario secretario = new Secretario();
+		
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		
+		if(secretario.autenticar()) {
 
 		for (int qtd = 1; qtd <= 6; qtd++) {
 
@@ -87,7 +93,8 @@ public class PrimeiraClasseJava {
 					+ aluno.getMediaNota());
 		}
 		
-		}
+		}else
+			JOptionPane.showMessageDialog(null, "Falha no Login!");
 
 	}
 
