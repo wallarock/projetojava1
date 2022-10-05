@@ -23,10 +23,11 @@ public class PrimeiraClasseJava {
 		String login = JOptionPane.showInputDialog("Login:");
 		String senha = JOptionPane.showInputDialog("Senha:");
 		
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
-		if(new Secretario().autenticar(login, senha)) {
+		if(permitirAcesso.autenticar()) {
 
-		for (int qtd = 1; qtd <= 6; qtd++) {
+		for (int qtd = 1; qtd <= 1; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do aluno: ");
 
