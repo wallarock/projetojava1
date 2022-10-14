@@ -27,7 +27,7 @@ public class PrimeiraClasseJava {
 		
 		if(permitirAcesso.autenticar()) {
 
-		for (int qtd = 1; qtd <= 2; qtd++) {
+		for (int qtd = 1; qtd <= 1; qtd++) {
 
 			String nome = JOptionPane.showInputDialog("Nome do aluno: ");
 
