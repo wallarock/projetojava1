@@ -175,7 +175,7 @@ public class Aluno extends Pessoa {
 	}
 	
 	public String msgMaiorIdade() {
-		return this.pessoaMaiorIdade() ? "Falow ô véião!!!" : "Hahaha bebezão!!!";
+		return this.pessoaMaiorIdade() ? "Maior de idade" : "Menor de idade";
 	}
 	
 }
