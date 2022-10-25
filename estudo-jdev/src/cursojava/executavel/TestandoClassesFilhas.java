@@ -13,13 +13,13 @@ public class TestandoClassesFilhas {
 		aluno.setNome("Wallace");
 		aluno.setIdade(38);
 		aluno.setNomeEscola("NOC FAT");
-		aluno.setIdade(17);
+		
 		
 		Diretor diretor = new Diretor();
 
 		diretor.setNome("Rudson");
 		diretor.setTempoDirecao(2);
-		diretor.setIdade(38);
+		diretor.setIdade(17);
 		
 		Secretario secretario = new Secretario();
 		
