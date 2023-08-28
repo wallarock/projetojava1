@@ -4,6 +4,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +22,10 @@ public class UserPosDao {
 	public void salvar(Userposjava userposjava) {
 		try {
 			/* Prepara a query */
-			String sql = "insert into userposjava (id, nome, email) values(?,?,?)";
+			String sql = "insert into userposjava (nome, email) values(?,?)";
 			PreparedStatement insert = connection.prepareStatement(sql);
-			insert.setLong(1, userposjava.getId());
-			insert.setString(2, userposjava.getNome());
-			insert.setString(3, userposjava.getEmail());
+			insert.setString(1, userposjava.getNome());
+			insert.setString(2, userposjava.getEmail());
 			insert.execute();
 			connection.commit();
 
@@ -63,7 +63,7 @@ public class UserPosDao {
 		return list;
 	}
 
-	//Método para buscar apenas UM objeto do UserPosJava como objetos do banco
+	// Método para buscar apenas UM objeto do UserPosJava como objetos do banco
 	public Userposjava buscar(Long id) throws Exception {
 		Userposjava retorno = new Userposjava();
 
@@ -72,7 +72,7 @@ public class UserPosDao {
 		PreparedStatement statement = connection.prepareStatement(sql);
 		ResultSet resultado = statement.executeQuery(); // ResultSet do Java SQL para trazer o resultado da query
 
-		while (resultado.next()) { //Retorna apenas um usuário ou nenhum
+		while (resultado.next()) { // Retorna apenas um usuário ou nenhum
 			retorno.setId(resultado.getLong("id"));
 			retorno.setNome(resultado.getString("nome"));
 			retorno.setEmail(resultado.getString("email"));
@@ -80,5 +80,49 @@ public class UserPosDao {
 		}
 
 		return retorno;
+	}
+
+	public void atualizar(Userposjava userposjava) {
+
+		try {
+			String sql = "UPDATE userposjava set nome = ? where id = " + userposjava.getId();
+
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, userposjava.getNome());
+
+			statement.execute();
+
+			connection.commit();
+		} catch (SQLException e) {
+
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+
+		}
+
+	}
+	
+	public void deletar(Long id) {
+		
+		try {
+			
+			String sql = "delete from userposjava where id = " + id;
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.execute();
+			
+			connection.commit();
+			
+		} catch (Exception e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+		
 	}
 }
