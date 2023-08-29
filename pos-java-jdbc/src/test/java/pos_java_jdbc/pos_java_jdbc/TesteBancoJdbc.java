@@ -46,7 +46,7 @@ public class TesteBancoJdbc {
 		UserPosDao dao = new UserPosDao();
 
 		try {
-			Userposjava userposjava = dao.buscar(1L);
+			Userposjava userposjava = dao.buscar(3L);
 
 			System.out.println(userposjava);
 
