@@ -9,11 +9,12 @@
 <body>
 <h1>Bem vindo ao curso de JSP</h1>
 
-<%
+<form action = "receber-nome.jsp">
+<input name = "nome">
+<input name = "idade">
+<input type = "submit">
 
-out.print("Seu sucesso garantido!");
-
-%>
+</form>
 
 </body>
 </html>
